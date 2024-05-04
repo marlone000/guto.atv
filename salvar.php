@@ -12,4 +12,11 @@ $pasta = "img/";
 move_uploaded_file($_FILES ['foto']['tmp_name'], $pasta . $nomeNovo);
 
 // fim do upload
+
+include "conexao.php";
+$sql = "insert into tb_pokemon(nome, tipo, foto) values('$nome', '$tipo', '$nomeNovo')";
+
+mysqli_query($conexao, $sql);
+
+mysqli_close($conexao);
 ?>
